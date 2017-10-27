@@ -1,7 +1,7 @@
 import pandas as pd
 import numpy as np
 import function
-
+import sys
 data = function.get_data(sys.argv[3])
 row ,col = data.shape
 training_data = np.zeros((row, 6))
@@ -56,4 +56,4 @@ for item in range(number_of_data):
         predict = 0
     predict_value.append(predict)
 df = pd.DataFrame({'id': test_id, 'label': predict_value})
-df.to_csv(sys.argv[6]", index=False)
+df.to_csv(sys.argv[6], index=False)
