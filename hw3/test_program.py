@@ -1,8 +1,9 @@
 import numpy as np
 import pandas as pd
 from keras.models import load_model
+import sys
 
-test_data = pd.read_csv('test.csv', sep = ',', encoding = 'UTF-8')
+test_data = pd.read_csv(sys.argv[1], sep = ',', encoding = 'UTF-8')
 test_data = test_data.as_matrix()
 id_data = test_data[:,0]
 test_num = len(id_data)
@@ -26,9 +27,9 @@ del model
 model = load_model('VGG16_model_best.h5')
 result5 = model.predict(test)
 del model
-result = (result1 * 0.1 + result2 * 0.2 + result3 * 0.1 + result4 * 0.2 + result5 * 0.4)
+result = result1 * 0.1 + result2 * 0.2 + result3 * 0.1 + result4 * 0.2 + result5 * 0.4
 result = result.argmax(axis=-1)
 
 output = pd.DataFrame({'id': id_data , 'label':result})
-output.to_csv('Voting.csv', index = False)
+output.to_csv(sys.argv[2], index = False)
 
