@@ -5,10 +5,10 @@ from keras.models import load_model
 from keras.preprocessing import sequence
 import sys
 
-max_word_idx = 5000
+max_word_idx = 100000
 max_sequence_len = 50
 embedding_vector_len = 50
-threshold = 0.4
+threshold = 0.5
 
 with open('tokenizer.pickle', 'rb') as handle:
     # x_test = pickle.load(handle)
