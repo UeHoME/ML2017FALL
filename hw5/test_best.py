@@ -36,5 +36,5 @@ for i in range(len(result)):
 	a = result[i]
 	op.append(a[0])
 
-output = pd.DataFrame({'AestDataID': id_data,'Rating':op})
+output = pd.DataFrame({'TestDataID': id_data,'Rating':op})
 output.to_csv(sys.argv[2], index = False)
