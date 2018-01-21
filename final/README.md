@@ -8,6 +8,6 @@ Package Version
 
 How to get prediction file:
 
-cd src/
+	cd src/
 
-bash final.sh $1(test data path) $2(prediction file path)
+	bash final.sh $1(test data path) $2(prediction file path)
