@@ -4,4 +4,4 @@ numpy : 1.12.1
 
 How to get prediction file
 
-bash final.sh<test data path><prediction file path>
+bash final.sh $1(test data path) $2(prediction file path)
