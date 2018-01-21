@@ -1,6 +1,8 @@
 Package Version
-pandas: 0.20.1
-numpy : 1.12.1 
+
+	pandas: 0.20.1
+
+	numpy : 1.12.1 
 
 How to get prediction file
 
