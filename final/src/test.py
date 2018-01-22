@@ -3,6 +3,7 @@ import pandas as pd
 import numpy as np
 import jieba
 import sys
+
 embedding_dimention = 64;
 
 def cos_sim(u, v):
@@ -11,16 +12,16 @@ def cos_sim(u, v):
 
 
 # set jieba dictionary
-jieba.set_dictionary('jieba_dict/dict.txt.big.txt')
+jieba.set_dictionary('dict.txt.big.txt')
 
 # load stopwords set
 stopwordset = set()
-with open('jieba_dict/stop_words.txt', 'r', encoding = 'utf-8') as sw:
+with open('stop_words.txt', 'r', encoding = 'utf-8') as sw:
     for line in sw:
         stopwordset.add(line.strip('\n'))
 
 # load model
-model = word2vec.Word2Vec.load("model_64.bin")
+model = word2vec.Word2Vec.load("model_64_win5_it_100.bin")
 
 # load data
 data = pd.read_csv(sys.argv[1])
